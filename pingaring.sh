@@ -1,12 +1,12 @@
 #!/usr/bin/bash
 
 
-# get_device_name() {
-#     local ip=$1
-#     local mac_address=$(arp -n $ip | awk '/ether/ {print $3}')
+ get_device_name() {
+    local ip=$1
+    local mac_address=$(arp -n $ip | awk '/ether/ {print $3}')
 
-#     if [ -n "$mac_address" ]; then
-#         local device_name=$(arp -a | grep $mac_address | awk '{print $1}')
+    if [ -n "$mac_address" ]; then
+        local device_name=$(arp -a | grep $mac_address | awk '{print $1}')
 #         if [ -n "$device_name" ]; then
 #             echo "Device name for $ip: $device_name"
 #         else
